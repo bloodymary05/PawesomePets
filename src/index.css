@@ -1,0 +1,110 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 20%;
+
+    --primary: 257 80% 75%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 120 81% 94%;
+    --secondary-foreground: 240 6% 30%;
+
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+
+    --accent: 240 30% 96%;
+    --accent-foreground: 257 80% 55%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 257 80% 75%;
+
+    --radius: 0.8rem;
+  }
+
+  .dark {
+    --background: 240 10% 8%;
+    --foreground: 0 0% 96%;
+
+    --card: 240 10% 12%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 240 10% 12%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 257 80% 75%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 6% 20%;
+    --secondary-foreground: 0 0% 96%;
+
+    --muted: 240 6% 16%;
+    --muted-foreground: 240 6% 66%;
+
+    --accent: 240 6% 18%;
+    --accent-foreground: 257 80% 75%;
+
+    --destructive: 0 74% 42%;
+    --destructive-foreground: 0 0% 96%;
+
+    --border: 240 6% 22%;
+    --input: 240 6% 22%;
+    --ring: 257 80% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-medium;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container px-4 sm:px-6 lg:px-8 mx-auto;
+  }
+  
+  .btn-primary {
+    @apply bg-pet-purple hover:bg-pet-purple-dark text-white font-medium py-2 px-6 rounded-full transition-all duration-200 shadow-md hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-pet-green hover:bg-[#E8F5D4] text-pet-purple-dark font-medium py-2 px-6 rounded-full transition-all duration-200 border border-pet-purple-dark;
+  }
+
+  .input-field {
+    @apply rounded-lg p-2.5 bg-white border border-gray-300 text-gray-700 focus:border-pet-purple focus:ring-2 focus:ring-pet-purple/20 outline-none transition-all duration-200;
+  }
+
+  .pet-card {
+    @apply bg-white rounded-2xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  .paw-list li {
+    @apply relative pl-7 before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-5 before:h-5 before:bg-[url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%239b87f5"><path d="M12 0l2.45 9.12L24 12l-9.55 2.88L12 24l-2.45-9.12L0 12l9.55-2.88z"/></svg>')] before:bg-no-repeat before:bg-contain;
+  }
+}
